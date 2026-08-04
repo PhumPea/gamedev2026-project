@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c15tw24t3axhb"]
+
+[ext_resource type="AudioStream" uid="uid://dgklv277pu6" path="res://Assets/Sound/alphix-game-over-417465.mp3" id="1_5lehs"]
+[ext_resource type="PackedScene" uid="uid://puc4l62gx6et" path="res://Scenes/Prefabs/button_exit.tscn" id="2_buq0o"]
+[ext_resource type="Texture2D" uid="uid://cdgrpgbb81xa8" path="res://Assets/Spritesheet/6MG0aX.png" id="2_cfvhd"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="2_chlux"]
+
+[node name="GameOver" type="Node2D" unique_id=826370530]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=403651431]
+stream = ExtResource("1_5lehs")
+autoplay = true
+
+[node name="6mg0aX" type="Sprite2D" parent="." unique_id=2047097425]
+position = Vector2(580.00006, 329.5)
+scale = Vector2(1.2322176, 0.9539106)
+texture = ExtResource("2_cfvhd")
+
+[node name="Title2" type="Label" parent="." unique_id=422288620]
+offset_left = 348.0
+offset_top = 205.0
+offset_right = 843.0
+offset_bottom = 323.0
+theme = ExtResource("2_chlux")
+theme_override_colors/font_color = Color(1, 0.011764706, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 90
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnExit" parent="." unique_id=1633606001 instance=ExtResource("2_buq0o")]
+offset_left = 449.0
+offset_top = 349.0
+offset_right = 575.0
+offset_bottom = 403.0
+text = "Exit to Menu"
+
+[node name="btnPlay" parent="." unique_id=1146872882 instance=ExtResource("2_buq0o")]
+offset_left = 614.0
+offset_top = 349.0
+offset_right = 740.0
+offset_bottom = 403.0
+shortcut = null
+text = "Play Again"

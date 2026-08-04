@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cxa7fsq5tl21o"]
+
+[ext_resource type="Script" uid="uid://cucxl5dsdevya" path="res://Scenes/Prefabs/coin.gd" id="1_63cp6"]
+[ext_resource type="Texture2D" uid="uid://c0g2yw33moy7l" path="res://Assets/Spritesheet/Gold/Gold_1.png" id="3_iu052"]
+[ext_resource type="Texture2D" uid="uid://621as0fwjhum" path="res://Assets/Textures/star_07.png" id="3_kcika"]
+
+[sub_resource type="Animation" id="Animation_ewi08"]
+resource_name = "Move"
+loop_mode = 2
+
+[sub_resource type="Animation" id="Animation_i5bmm"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8jyk"]
+_data = {
+&"Move": SubResource("Animation_ewi08"),
+&"RESET": SubResource("Animation_i5bmm")
+}
+
+[sub_resource type="Curve" id="Curve_axh8i"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494709, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_b1ue3"]
+offsets = PackedFloat32Array(0.625, 1)
+colors = PackedColorArray(0.914063, 0.734375, 0, 1, 1, 1, 1, 0)
+
+[node name="Gold" type="Area2D" unique_id=1641825095]
+scale = Vector2(2.472116, 2.7833145)
+script = ExtResource("1_63cp6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1294998107]
+libraries/ = SubResource("AnimationLibrary_l8jyk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=17201263]
+position = Vector2(-1.7763568e-15, 0)
+scale = Vector2(0.036330927, 0.03058723)
+texture = ExtResource("3_iu052")
+
+[node name="CoinSparkles" type="CPUParticles2D" parent="." unique_id=1123389335]
+position = Vector2(5.9604645e-08, -4.768372e-07)
+scale = Vector2(0.6457595, 0.6260537)
+amount = 10
+texture = ExtResource("3_kcika")
+lifetime = 2.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 80.0
+damping_min = 0.5
+damping_max = 0.5
+scale_amount_min = 0.04
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_axh8i")
+color_ramp = SubResource("Gradient_b1ue3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1765521980]
+polygon = PackedVector2Array(0, -8.982098, 5.258653, -7.904246, 8.494747, -5.3892584, 10.517306, -2.1557033, 10.517306, 2.1557033, 7.685724, 6.46711, 3.640606, 8.622813, -0.40451178, 8.982098, -5.663165, 8.26353, -8.494747, 5.7485423, -10.517306, 2.1557033, -10.517306, -3.233555, -7.281212, -6.826394, -4.045118, -8.622813)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

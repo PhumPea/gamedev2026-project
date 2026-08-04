@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c5y568p25r7rl"]
+
+[ext_resource type="Texture2D" uid="uid://dsqhpet4dfpn8" path="res://Assets/Spritesheet/bullet.png" id="1_pkqe3"]
+[ext_resource type="Script" uid="uid://lfkiq2j22hff" path="res://Scenes/Prefabs/bullet.gd" id="1_yovq8"]
+[ext_resource type="Texture2D" uid="uid://qj5yo64vo2jy" path="res://Assets/Spritesheet/GreenAura.png" id="3_qhcqa"]
+[ext_resource type="Texture2D" uid="uid://ilj3g5gm5msy" path="res://Assets/Spritesheet/GreenEnerygyBall.png" id="5_6yo7a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pkqe3"]
+friction = 0.5
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqoqv"]
+radius = 6.708204
+
+[node name="Bullet" type="RigidBody2D" unique_id=737966296 groups=["Bullet"]]
+collision_layer = 2
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_pkqe3")
+script = ExtResource("1_yovq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441138516]
+rotation = 1.5707964
+scale = Vector2(3.7261133, 3.845553)
+shape = SubResource("CircleShape2D_mqoqv")
+
+[node name="Bullet" type="Sprite2D" parent="." unique_id=308939572]
+visible = false
+position = Vector2(-0.1641778, -0.3124994)
+scale = Vector2(0.24490353, 0.2572188)
+texture = ExtResource("1_pkqe3")
+
+[node name="GreenAura" type="Sprite2D" parent="." unique_id=672997795]
+visible = false
+position = Vector2(-25, 3.000001)
+scale = Vector2(0.5767375, 0.4583415)
+texture = ExtResource("3_qhcqa")
+
+[node name="GreenEnerygyBall" type="Sprite2D" parent="." unique_id=1390520045]
+position = Vector2(-11, -1)
+scale = Vector2(0.07718774, 0.068057284)
+texture = ExtResource("5_6yo7a")

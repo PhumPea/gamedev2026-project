@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cjvy6bxnpmxc5"]
+
+[ext_resource type="PackedScene" uid="uid://d27bcsmx82vfa" path="res://Scenes/Actors/enemy.tscn" id="1_8ysnm"]
+[ext_resource type="Script" uid="uid://bx5lotsye1r4s" path="res://Scenes/Actors/monster_small.gd" id="2_a7g88"]
+[ext_resource type="Texture2D" uid="uid://meutvojijan0" path="res://Assets/Spritesheet/zombie2/Attack1.png" id="3_8ysnm"]
+[ext_resource type="Texture2D" uid="uid://eii82pk7fs5m" path="res://Assets/Spritesheet/zombie2/Attack2.png" id="4_a7g88"]
+[ext_resource type="Texture2D" uid="uid://gttmuy3xgb2n" path="res://Assets/Spritesheet/zombie2/Attack3.png" id="5_mnc6p"]
+[ext_resource type="Texture2D" uid="uid://c53i54xa4ucbb" path="res://Assets/Spritesheet/zombie2/Attack4.png" id="6_u5rq2"]
+[ext_resource type="Texture2D" uid="uid://fesxjn7s8q58" path="res://Assets/Spritesheet/zombie2/Attack5.png" id="7_2ei0v"]
+[ext_resource type="Texture2D" uid="uid://cjy8w7umh4qpg" path="res://Assets/Spritesheet/zombie2/Attaxk6.png" id="8_mreaa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7ctk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ysnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a7g88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mnc6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u5rq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ei0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mreaa")
+}],
+"loop": 1,
+"name": &"zombie2",
+"speed": 5.0
+}]
+
+[node name="Enemy3" unique_id=600502477 instance=ExtResource("1_8ysnm")]
+script = ExtResource("2_a7g88")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=587424215]
+position = Vector2(-12, -56)
+scale = Vector2(3.5897558, 3.2119288)
+
+[node name="CollisionShape2D2" parent="HitArea" parent_id_path=PackedInt32Array(1115411835) index="0" unique_id=2008793250]
+position = Vector2(-12, -55.000004)
+scale = Vector2(3.5470324, 3.3341093)
+
+[node name="AnimateSprite" type="AnimatedSprite2D" parent="Sprite" parent_id_path=PackedInt32Array(1445111960) index="0" unique_id=87960724]
+position = Vector2(-21, -46)
+scale = Vector2(-0.47990534, 0.38746795)
+sprite_frames = SubResource("SpriteFrames_l7ctk")
+animation = &"zombie2"
+
+[node name="playerRay" parent="Sprite/Ray" parent_id_path=PackedInt32Array(1415425330) index="0" unique_id=1255579585]
+scale = Vector2(1.3655516, -2.3237245)
+
+[node name="wallRay" parent="Sprite/Ray" parent_id_path=PackedInt32Array(1415425330) index="1" unique_id=807141594]
+scale = Vector2(2.7423403, 1.9125675)
+
+[node name="floorRay" parent="Sprite/Ray" parent_id_path=PackedInt32Array(1415425330) index="2" unique_id=1219665679]
+position = Vector2(-73.00001, -20.999998)
+scale = Vector2(1.2950811, 1.9521263)

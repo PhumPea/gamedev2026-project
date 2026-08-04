@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b802nm7n1nvc1"]
+
+[ext_resource type="Texture2D" uid="uid://pmsfb0woeoii" path="res://Assets/Spritesheet/lava_block.png" id="1_qxtxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc0v6"]
+size = Vector2(256, 283.70563)
+
+[node name="Lava" type="StaticBody2D" unique_id=490870859 groups=["Traps"]]
+
+[node name="LavaBlock" type="Sprite2D" parent="." unique_id=251280028]
+position = Vector2(96, 160)
+scale = Vector2(0.0625, 0.06250001)
+texture = ExtResource("1_qxtxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=690608631]
+position = Vector2(96, 160)
+scale = Vector2(0.25333607, 0.23031731)
+shape = SubResource("RectangleShape2D_hc0v6")
