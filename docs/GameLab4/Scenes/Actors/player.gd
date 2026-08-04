@@ -9,7 +9,7 @@ signal hit_trap
 
 @export_category("Player Properties") # You can tweak these changes according to your likings
 @export var move_speed : float = 300
-@export var jump_force : float = 650
+@export var jump_force : float = 700
 @export var gravity : float = 30
 @export var max_jump_count : int = 2
 @export var bullet_scene : PackedScene
