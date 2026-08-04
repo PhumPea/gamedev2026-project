@@ -4,6 +4,13 @@ By Phumrappee Nambubpa 673380337-9
 A half-zombie creature with superpowers can release green energy to eliminate enemies in its path.
 - **Game Style** —???
 Action 2d Side-Scrolling
+
+# Clip Demo VDO
+https://drive.google.com/file/d/1q51sdTLTu_dR-icXiROxeBzfBkABB8d7/view?usp=sharing
+
+# Link Play Game
+https://phumpea.github.io/gamedev2026-project/GameLab4/docs/index.html
+
 # 2D Platformer Starter Kit
 
 This starter kit provides all the essential mechanics needed to build a complete 2D platformer game in Godot 4.7. It is designed as a hands-on learning resource for students taking the **Computer Game Development** course at the **College of Computing, Khon Kaen University**.
